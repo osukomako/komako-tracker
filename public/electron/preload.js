@@ -10,7 +10,7 @@ window.addEventListener('DOMContentLoaded', () => {
       backgroundColor: Color.fromHex("#121212"),
       menu: null, // = do not automatically use Menu.applicationMenu
     })
-    titlebar.updateTitle(`osu!tracker (${localVersion})`);
+    titlebar.updateTitle(`osu!komako tracker (${localVersion})`);
 })
 
 contextBridge.exposeInMainWorld('api',{
