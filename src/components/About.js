@@ -17,7 +17,7 @@ export default function About() {
 
     return (
         <Box textAlign="center" sx={{ width: '100%', p: 0 }}>
-            <Typography align="center" sx={{fontWeight: 'bold', mb: 1}}>osu!tracker made by respektive</Typography>
+            <Typography align="center" sx={{fontWeight: 'bold', mb: 1}}>osu!tracker made by respektive, modified by lionz</Typography>
 
             <Grid container direction="row" justifyContent="center" alignItems="center" spacing={2}>
                 <Grid item xs={5.5}>
