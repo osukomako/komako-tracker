@@ -17,7 +17,7 @@
 
 ## Download
 
-You can find the newest version [here](https://github.com/respektive/osu-tracker/releases/latest) or on the [Releases](https://github.com/respektive/osu-tracker/releases) page.
+You can find the newest version [here](https://github.com/osukomako/komako-tracker/releases/latest) or on the [Releases](https://github.com/osukomako/komako-tracker/releases) page.
 
 Includes portable version for Windows aswell as an AppImage and binary files for Linux.
 
