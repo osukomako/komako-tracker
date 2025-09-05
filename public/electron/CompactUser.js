@@ -3,39 +3,41 @@ const { GetLevelPrecise } = require("./levelCalc.js")
 class CompactUser {
     constructor(user, scoreRank) {
         this.date = new Date
-        this.gamemode = user.gamemode
-        this.user_id = user?.id
-        this.avatar_url = user?.avatar_url
-        this.username = user?.username
-        this.cover_url = user?.cover_url
-        this.score_rank = scoreRank?.rank
-        this.follower_count = user?.follower_count
-        this.scores_first_count = user?.scores_first_count
-        this.global_rank = user?.statistics?.global_rank
-        this.pp = user?.statistics?.pp
-        this.ranked_score = user?.statistics?.ranked_score
-        this.total_score = user?.statistics?.total_score
-        this.level = GetLevelPrecise(this.total_score ?? 0)
-        this.accuracy = user?.statistics?.hit_accuracy
-        this.play_count = user?.statistics?.play_count
-        this.play_time = user?.statistics?.play_time
-        this.total_hits = user?.statistics?.total_hits
-        this.maximum_combo = user?.statistics?.maximum_combo
-        this.replays_watched_by_others = user?.statistics?.replays_watched_by_others
-        this.ss_count = user?.statistics?.grade_counts?.ss
-        this.ssh_count = user?.statistics?.grade_counts?.ssh
-        this.s_count = user?.statistics?.grade_counts?.s
-        this.sh_count = user?.statistics?.grade_counts?.sh
-        this.a_count = user?.statistics?.grade_counts?.a
-        this.total_ss = (this.ss_count ?? 0) + (this.ssh_count ?? 0)
-        this.total_s = (this.s_count ?? 0) + (this.sh_count ?? 0)
+        // gulag API expects integer gamemode
+    this.gamemode = user.gamemode
+    this.user_id = user?.player?.info?.id
+    this.avatar_url = null // not present in komako response
+    this.username = user?.player?.info?.name
+    this.cover_url = null // not present in komako response
+        const mode = String(this.gamemode ?? 0)
+        this.rank = user?.player?.stats?.[mode]?.rank
+        this.global_rank = user?.player?.stats?.[mode]?.rank
+        this.follower_count = user?.player?.info.followers
+        this.pp = user?.player?.stats?.[mode]?.pp
+        this.ranked_score = user?.player?.stats?.[mode]?.rscore
+        this.total_score = user?.player?.stats?.[mode]?.tscore
+        this.level = user?.player?.stats?.[mode]?.levels?.current_level
+        this.accuracy = user?.player?.stats?.[mode]?.acc
+        this.play_count = user?.player?.stats?.[mode]?.plays
+        this.play_time = user?.player?.stats?.[mode]?.playtime
+        this.total_hits = user?.player?.stats?.[mode]?.total_hits
+        this.maximum_combo = user?.player?.stats?.[mode]?.max_combo
+        this.replays_watched_by_others = user?.player?.stats?.[mode]?.replay_views
+        this.ss_count = user?.player?.stats?.[mode]?.x_count
+        this.ssh_count = user?.player?.stats?.[mode]?.xh_count
+        this.sh_count = user?.player?.stats?.[mode]?.sh_count
+        this.s_count = user?.player?.stats?.[mode]?.s_count
+        this.a_count = user?.player?.stats?.[mode]?.a_count
+        this.country_rank = user?.player?.stats?.[mode]?.country_rank
+        // Derived/calculated fields
+        this.total_ss = (this.ssh_count ?? 0) + (this.ss_count ?? 0)
+        this.total_s = (this.sh_count ?? 0) + (this.s_count ?? 0)
         this.clears = (this.total_ss ?? 0) + (this.total_s ?? 0) + (this.a_count ?? 0)
-        this.country_rank = user?.statistics?.country_rank
-        this.medal_count = user?.user_achievements?.length
-        this.badge_count = user?.badges?.length
-        this.total_score_per_play = this.total_score / this.play_count
-        this.ranked_score_per_play = this.ranked_score / this.play_count
-        this.hits_per_play = this.total_hits / this.play_count
+        this.medal_count = 0 // not present
+        this.badge_count = 0 // not present
+        this.tscore_per_play = (this.tscore ?? 0) / (this.plays ?? 1)
+        this.rscore_per_play = (this.rscore ?? 0) / (this.plays ?? 1)
+        this.hits_per_play = (this.total_hits ?? 0) / (this.plays ?? 1)
     }
 }
 
