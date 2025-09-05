@@ -13,6 +13,7 @@ class CompactUser {
         this.rank = user?.player?.stats?.[mode]?.rank
         this.global_rank = user?.player?.stats?.[mode]?.rank
         this.follower_count = user?.player?.info.followers
+        this.scores_first_count = user?.player?.stats?.[mode]?.first_places
         this.pp = user?.player?.stats?.[mode]?.pp
         this.ranked_score = user?.player?.stats?.[mode]?.rscore
         this.total_score = user?.player?.stats?.[mode]?.tscore

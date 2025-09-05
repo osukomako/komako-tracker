@@ -1,7 +1,7 @@
 const ALL_STATS = [
     {"id": "rank", "name": "Score Rank"},
     {"id": "followers", "name": "Followers"},
-    {"id": "scores_count", "name": "First Places"},
+    {"id": "scores_first_count", "name": "First Places"},
     {"id": "rank", "name": "PP Rank"},
     {"id": "pp", "name": "PP"},
     {"id": "rscore", "name": "Ranked Score"},
