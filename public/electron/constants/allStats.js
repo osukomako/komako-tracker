@@ -1,5 +1,5 @@
 const ALL_STATS = [
-    {"id": "rank", "name": "Score Rank"},
+    {"id": "scoore_rank", "name": "Score Rank"},
     {"id": "followers", "name": "Followers"},
     {"id": "scores_first_count", "name": "First Places"},
     {"id": "rank", "name": "PP Rank"},

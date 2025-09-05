@@ -10,7 +10,7 @@ class CompactUser {
     this.username = user?.player?.info?.name
     this.cover_url = null // not present in komako response
         const mode = String(this.gamemode ?? 0)
-        this.rank = user?.player?.stats?.[mode]?.rank
+        this.score_rank = user?.player?.stats?.[mode]?.rscore_rank
         this.global_rank = user?.player?.stats?.[mode]?.rank
         this.follower_count = user?.player?.info.followers
         this.scores_first_count = user?.player?.stats?.[mode]?.first_places
