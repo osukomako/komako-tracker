@@ -57,17 +57,6 @@ export default function GeneralSettings({ refreshStats }) {
         <>
         <Grid container direction="row" justifyContent="space-evenly" alignItems="center" spacing={2}>
             <Grid item xs={5.5}>
-                <TextField label="Client ID" variant="filled" type="number" margin="dense" size="small"
-                value={settings?.client_id ?? ""} onChange={setClientId}/>
-            </Grid>
-            <Grid item xs={5.5}>
-                <TextField label="Client Secret" variant="filled" type="password" margin="dense" size="small"
-                value={settings?.client_secret ?? ""} onChange={setClientSecret}/>
-            </Grid> 
-        </Grid>
-
-        <Grid container direction="row" justifyContent="space-evenly" alignItems="center" spacing={2}>
-            <Grid item xs={5.5}>
                 <TextField label="User ID" variant="filled" type="number" margin="dense" size="small" value={user_id} onChange={handleUserIdChange}/>
             </Grid>
             <Grid item xs={5.5}>
@@ -81,7 +70,8 @@ export default function GeneralSettings({ refreshStats }) {
                 <InputLabel id="gamemode-label">Gamemode</InputLabel>
                 <Select value={settings?.gamemode ?? "osu"} labelId="gamemode-label" id="gamemode-label" margin="dense" variant="filled" size="small" onChange={setGamemode}>
                     <MenuItem value={""} disabled>Select a gamemode</MenuItem>
-                    <MenuItem value={"osu"}>osu!</MenuItem>
+                    <MenuItem value={"osu"}>osu! (vanilla)</MenuItem>
+                    <MenuItem value={"relax"}>osu!relax</MenuItem>
                     <MenuItem value={"taiko"}>osu!taiko</MenuItem>
                     <MenuItem value={"fruits"}>osu!catch</MenuItem>
                     <MenuItem value={"mania"}>osu!mania</MenuItem>
