@@ -23,7 +23,7 @@ export default function Footer() {
 
   return (
     <Box textAlign="center" sx={{ width: '100%', height: "24px", bottom: 0, bgcolor: 'background.paper' }}>
-        <Link component="button" variant="body2" underline="hover" onClick={handleOpen} >made by respektive</Link>
+        <Link component="button" variant="body2" underline="hover" onClick={handleOpen} >made by respektive, modified by lionz</Link>
 
         <Modal open={open} onClose={handleClose}>
             <Box sx={style}>
