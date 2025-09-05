@@ -15,7 +15,7 @@ function OsuAvatar({toggleSettings}) {
     return (
         <Tooltip title="Settings">
         <IconButton onClick={toggleSettings} sx={{ p: 0, borderRadius: "50%", border: "2px solid transparent", "&:hover": hoverTheme }}>
-            <Avatar alt="osu! Avatar" src={ settings?.user_id ? `https://a.ppy.sh/${settings?.user_id}` : "https://osu.ppy.sh/images/layout/avatar-guest.png" }/>
+            <Avatar alt="osu! Avatar" src={ settings?.user_id ? `https://a.komako.pw/${settings?.user_id}` : "https://osu.ppy.sh/images/layout/avatar-guest.png" }/>
         </IconButton>
         </Tooltip>
     )
