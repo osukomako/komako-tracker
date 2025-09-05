@@ -1,10 +1,8 @@
-# osu-tracker
+# komako-tracker
 
- Statistics tracker for [osu!](https://osu.ppy.sh/) using [osu!api v2](https://osu.ppy.sh/docs/)
+ Statistics tracker for [komako](https://komako.pw/) using [osu!komako api](https://github.com/osukomako/)
 
  ![Screenshot](https://pek.li/0ifqap.png)
-
-https://user-images.githubusercontent.com/22381687/189698555-167156df-0a61-4d98-aeb5-1fa16b236d21.mp4
 
  **Features:**
 
@@ -23,21 +21,13 @@ You can find the newest version [here](https://github.com/respektive/osu-tracker
 
 Includes portable version for Windows aswell as an AppImage and binary files for Linux.
 
-## Obtaining osu!api v2 Client Credentials
-
-1. Go to [the OAuth section on the account settings page](https://osu.ppy.sh/home/account/edit#oauth) and create a new OAuth Application.  
-2. Give it a name like `osu-tracker` for example. (You don't need to set a Callback URL)  
-3. Register your Application and copy the ID and Secret into the app.
-
-![OAuth app on the website](https://pek.li/jvrxae.png)
-
 ## Building
 
 Clone the repo and cd into
 
 ```sh
-git clone https://github.com/respektive/osu-tracker.git
-cd osu-tracker
+git clone https://github.com/osukomako/komako-tracker
+cd komako-tracker
 ```
 
 Install modules
